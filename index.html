@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet"> 
+    <style>
+body {
+    box-sizing: border-box;
+    width: 734px;
+    height: 610px;
+    margin: -15px auto;
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 734px;
+    height: 610px;
+    background-color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    letter-spacing: 5px;
+    padding: 24px;
+}
+
+form {
+    width: 85%;
+    background: rgb(230, 230, 230);
+    margin: auto;
+}
+
+input {
+    margin: 50px 10px 50px;
+    padding: 10px;
+    font-size: 15px;
+}
+button {
+    background-color: #e15249;
+    color: rgb(230, 230, 230);
+    letter-spacing: 1px;
+    border-radius: 2px;
+    border: none;
+    width: 15%;
+    padding: 10px;
+    font-size: 15px;
+}
+
+input[type="text"] {
+    border-radius: 2px;
+    border-color: black;
+    width: 35%;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <H1>PREKIŲ KREPŠELIS</H1>
+        <div>
+            <form id = "form1">
+                <input type="text" id="name" placeholder="Įveskite prekę"<br>
+                <button type="submit" onclick="gauti();">ENTER!</button>
+            </form>
+            <div id="demo"></div>
+        </div>
+    </div>
+    <script>
+
+        let masyvas = [];
+        let additem = document.createElement("ul");
+    function gauti() {
+        var name = document.getElementById('name').value;
+        if (!(typeof name === 'undefined') && name!=null && name.trim()!='') {  
+            masyvas.push(name);
+        }
+        console.log(masyvas);
+        event.preventDefault();
+
+        const li = document.createElement("li");
+        
+        li.textContent = masyvas;
+        additem.appendChild(li)
+        masyvas = new Array();
+        demo.appendChild(`<li>${additem} <button class="remove" data-name="">Panaikinti</button></li>`) 
+       
+      
+    }
+
+    </script>
+</body>
+</html>
